@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Desk Tape — Live Market Wallpaper</title>
+    <meta name="description" content="Desk Tape turns your desktop wallpaper into a live market display: indices, crypto, gold and yields at a glance, refreshed every 30 seconds." />
+    <meta name="theme-color" content="#05070a" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/wallpaper.css" />
+  </head>
+  <body data-mode="horizon" data-state="loading">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="grid" aria-hidden="true"></div>
+
+    <div class="desk">
+      <header class="desk-top">
+        <div class="brand" data-block="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">DESK TAPE</span>
+          <span class="brand-sub">LIVE MARKET WALLPAPER</span>
+          <span class="feed" id="feed"
+            ><span class="feed-dot" aria-hidden="true"></span
+            ><span id="feed-text">CONNECTING</span></span
+          >
+        </div>
+
+        <div class="sessions" id="sessions" data-block="sessions" aria-label="Exchange sessions"></div>
+
+        <div class="clock" data-block="clocks">
+          <span class="clock-time" id="clock-time">--:--</span>
+          <span class="clock-date" id="clock-date"></span>
+          <div class="clock-zones" id="clock-zones" aria-label="World clocks"></div>
+        </div>
+      </header>
+
+      <main class="stage">
+        <!-- HORIZON ------------------------------------------------------ -->
+        <section class="mode mode-horizon" aria-label="Horizon">
+          <div class="ribbon" id="ribbon" data-block="ribbon" aria-hidden="true"></div>
+          <div class="hero" id="hero" data-block="hero">
+            <div class="hero-kicker">
+              <span class="hero-label" id="hero-label">S&amp;P 500</span>
+              <span class="sep">/</span>
+              <span class="hero-symbol" id="hero-symbol">^GSPC</span>
+              <span class="pill" id="hero-range">5D</span>
+              <span class="hero-asof" id="hero-asof"></span>
+              <span class="hero-auto" id="hero-auto" hidden></span>
+            </div>
+            <div class="hero-price">
+              <span id="hero-price" class="num">—</span>
+              <span class="hero-currency" id="hero-currency"></span>
+            </div>
+            <div class="hero-delta" id="hero-delta">
+              <span class="delta-arrow" id="hero-arrow" aria-hidden="true">▬</span>
+              <span class="num" id="hero-change">—</span>
+              <span class="num delta-pct" id="hero-pct">—</span>
+            </div>
+            <dl class="hero-stats" id="hero-stats"></dl>
+          </div>
+
+          <aside class="hero-rail" data-block="rail">
+            <div class="gauge-card">
+              <div class="card-title" id="gauge-title">RISK APPETITE</div>
+              <div class="gauge" id="gauge">
+                <svg viewBox="0 0 200 112" aria-hidden="true">
+                  <path class="gauge-track" pathLength="100" d="M18 106 A 82 82 0 0 1 182 106" />
+                  <path class="gauge-fill" id="gauge-fill" pathLength="100" d="M18 106 A 82 82 0 0 1 182 106" />
+                </svg>
+                <div class="gauge-read">
+                  <span class="num" id="gauge-score">—</span>
+                  <span class="gauge-band" id="gauge-band">—</span>
+                </div>
+              </div>
+              <div class="gauge-label" id="gauge-label">GLOBAL RISK</div>
+            </div>
+            <ul class="movers" id="movers" aria-label="Movers"></ul>
+          </aside>
+        </section>
+
+        <!-- BOARD -------------------------------------------------------- -->
+        <section class="mode mode-board" aria-label="Board">
+          <div class="board" id="board"></div>
+        </section>
+
+        <!-- FOCUS -------------------------------------------------------- -->
+        <section class="mode mode-focus" aria-label="Focus">
+          <div class="focus-head" id="focus-head"></div>
+          <div class="focus-body">
+            <div class="focus-chart" id="focus-chart"></div>
+            <dl class="focus-stats" id="focus-stats"></dl>
+          </div>
+          <ul class="focus-switch" id="focus-switch" aria-label="Symbols"></ul>
+        </section>
+
+        <!-- MINIMAL ------------------------------------------------------ -->
+        <section class="mode mode-minimal" aria-label="Minimal">
+          <div class="minimal-hero" id="minimal-hero"></div>
+          <div class="minimal-strip" id="minimal-strip"></div>
+        </section>
+      </main>
+
+      <div class="horizon-chart" id="horizon-chart" data-block="chart" aria-hidden="true"></div>
+
+      <footer class="tape" data-block="tape">
+        <span class="tape-label" id="tape-label">LIVE TAPE</span>
+        <div class="tape-window"><div class="tape-track" id="tape-track"></div></div>
+        <span class="tape-meta" id="tape-meta">—</span>
+      </footer>
+    </div>
+
+    <div class="hint" id="hint" hidden>
+      <span><b>1</b>–<b>4</b> MODE</span>
+      <span><b>H</b> HERO</span>
+      <span><b>R</b> REFRESH</span>
+      <span><b>P</b> AUTO</span>
+      <span><b>F</b> FULL SCREEN</span>
+    </div>
+    <script src="/wallpaper.js"></script>
+  </body>
+</html>
