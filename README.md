@@ -30,6 +30,7 @@ Requirements: macOS 11+, `python3.12` with PyObjC (`pip install pyobjc-framework
 
 ```sh
 ./scripts/start.sh                 # start the local data server and open the app
+./scripts/install-server-agent.sh  # keep the data server running across logins
 ./scripts/install-wallpaper-app.sh # install ~/Applications/DeskTape.app + Desktop launcher
 ./scripts/wallpaper_status.py      # prove it is running under the Finder desktop
 ```
